@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #5f8f5f;
+  border-radius: 4px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #5f8f5f;
+  border: none;
+  border-radius: 4px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.8.1/dist/nouislider.min.css">
+<script src="https://cdn.jsdelivr.net/npm/nouislider@15.8.1/dist/nouislider.min.js"></script>
+</head>
+<body>
+    <div class="w-64">
+  <div class="relative h-6">
+    <!-- Track -->
+    <div class="absolute top-1/2 w-full h-1 bg-gray-300 rounded -translate-y-1/2"></div>
+
+    <!-- Range Inputs -->
+    <input
+      id="minRange"
+      type="range"
+      min="0"
+      max="1000"
+      value="200"
+      class="absolute w-full appearance-none bg-transparent pointer-events-none"
+    />
+
+    <input
+      id="maxRange"
+      type="range"
+      min="0"
+      max="1000"
+      value="800"
+      class="absolute w-full appearance-none bg-transparent pointer-events-none"
+    />
+  </div>
+
+  <div class="flex justify-between mt-4 text-sm">
+    <span>Min: $<span id="minValue">200</span></span>
+    <span>Max: $<span id="maxValue">800</span></span>
+  </div>
+</div>
+</body>
+<script>
+const minRange = document.getElementById("minRange");
+const maxRange = document.getElementById("maxRange");
+const minValue = document.getElementById("minValue");
+const maxValue = document.getElementById("maxValue");
+
+function updateValues() {
+  if (+minRange.value > +maxRange.value) {
+    [minRange.value, maxRange.value] = [maxRange.value, minRange.value];
+  }
+
+  minValue.textContent = minRange.value;
+  maxValue.textContent = maxRange.value;
+}
+
+minRange.addEventListener("input", updateValues);
+maxRange.addEventListener("input", updateValues);
+
+updateValues();
+</script>
+</html>

@@ -1,0 +1,1023 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/f02dee090f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        .i{
+            display: none;
+        }
+        .a:hover .i{
+            display: block;
+        }
+        .a:hover .p{
+            color: #ED262F;
+        }
+        .font{
+            font-family: "DM Serif Text", serif;
+        }
+         /* Hide default range styling */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            position: absolute;
+            background: transparent;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Custom track (hidden default) */
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 2px;
+        }
+
+        /* Custom thumb styling (Centered) */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border: 3px solid #23a9f7;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+            position: relative;
+            z-index: 3;
+            transform: translateY(-30%);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: white;
+            border: 3px solid #23a9f7;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+            z-index: 3;
+            transform: translateY(-30%);
+        }
+
+        /* Centering the range input itself */
+        .slider-container {
+            position: relative;
+            height: 18px; /* Adjust height to fit thumb */
+        }
+
+         
+
+    </style>
+  </head>
+  <body>
+    <!-- section1 (hero & nav) -->
+    <section class="bg-[url('/img/bg-1.png')] bg-no-repeat bg-cover bg-center h-[650px] relative p-[30px] flex  justify-center">
+        <div class="relative ">
+            <div class="flex   items-center justify-between bg-[#C94D50] pt-[14px] pb-[70px] px-[40px] w-[1300px] h-[108px] rounded-[24px] ">
+                <div class=" flex items-center  ">
+                    <div class="flex items-center mr-[34px] ">
+                        <i class="fa-regular fa-clock mr-[5px] text-[#F9BCBF] font-semibold text-[16px]"></i>
+                        <p class="text-[#F9BCBF] text-[16px] font-semibold mr-[10px]">Open:</p>
+                        <p class="text-base-100 font-semibold text-[16px]">10:00 AM - 11:00 PM</p>
+                    </div>
+                    <div class="flex items-center ">
+                        <i class="fa-solid fa-location-dot text-[#F9BCBF] mr-[5px] font-semibold text-[16px]"></i>
+                        <p class="text-[#F9BCBF] font-semibold text-[16px] mr-[10px]">Branch:</p>
+                        <p class=" text-base-100 font-semibold text-[16px] mr-[10px]">Mirpur-1 (main)</p>
+                        <i class="fa-solid fa-chevron-down text-[#F9BCBF] font-semibold text-[16px]  "></i>
+                    </div>
+                </div>
+                <div class=" flex items-center ">
+                    <div class="flex items-center  ">
+                        <img src="./img/Group.png" class="mr-[10px]" >
+                        <p class="text-base-100 font-semibold text-[16px] mr-[10px]">English</p>
+                        <i class="fa-solid fa-chevron-down text-[#F9BCBF] font-semibold text-[16px]"></i>
+                    </div>
+                    <div class="flex items-center  ml-[42px]">
+                        <i class="fa-regular fa-user text-[#F9BCBF] font-semibold text-[16px]"></i>
+                        <p class="text-base-100 font-semibold text-[16px] ml-[10px]">Login / Register</p>
+                    </div>
+                    <div class="flex items-center ml-[42px]">
+                        <i class="fa-brands fa-facebook-f text-[20px] pr-[18px] text-base-100"></i>
+                        <i class="fa-brands fa-x-twitter text-[20px] px-[18px] text-base-100 border-l-2 border-solid border-base-100"></i>
+                        <i class="fa-brands fa-instagram text-[20px] pl-[18px] text-base-100 border-l-2 border-solid border-base-100"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between mt-[30px] px-[40px] bg-base-100 w-[1240px] h-[90px] rounded-[24px] absolute top-[33px]  left-[30px]">
+                <div class="flex items-center gap-[34px]">
+                    <a href="" class="flex items-center gap-[5px] flex-col a">
+                        <p class="text-[20px] font-bold p">Home</p>
+                        <i class="fa-solid fa-sort-up  text-[#ED262F] text-[20px] i "></i>
+                    </a>
+                    <a href="" class="flex items-center gap-[5px] flex-col a">
+                        <p class="text-[20px] font-bold p">Items</p>
+                        <i class="fa-solid fa-sort-up text-[#ED262F] text-[20px] i"></i>
+                    </a>
+                    <a href="" class="flex items-center gap-[5px] flex-col a">
+                        <p class="text-[20px] font-bold p">Offer</p>
+                        <i class="fa-solid fa-sort-up text-[#ED262F] text-[20px] i"></i>
+                    </a>
+                    <a href="" class="flex items-center gap-[5px] flex-col a">
+                        <p class="text-[20px] font-bold p">Blogs</p>
+                        <i class="fa-solid fa-sort-up text-[#ED262F] text-[20px] i"></i>
+                    </a>
+                    <a href="" class="flex items-center gap-[5px] flex-col a">
+                        <p class="text-[20px] font-bold  p   ">Contacs</p>
+                        <i class="fa-solid fa-sort-up text-[#ED262F] text-[20px] i"></i>
+                    </a>
+                </div>
+                <div>
+                    <img src="./img/logo.png" alt="">
+                </div>
+                <div class="flex items-center gap-[34px]">
+                    <div class="border-2 border-[#ED262F]
+                     rounded-[40px] flex items-center gap-[10px] px-[12px] py-[5px]">
+                        <input type="search" class="border-0" name="" placeholder="Search" id="">
+                        <i class="fa-solid fa-magnifying-glass text-[#ED262F] bg-[#f59ba052] px-[7px] py-[7px] rounded-2xl"></i>
+                    
+                    </div>
+                    <div class="relative">
+                        <i class="fa-regular fa-heart text-[25px]"></i>
+                        <p class="flex align-center justify-center text-[13px] w-[20px] h-[20px] text-base-100 bg-[#F0AD4E] rounded-[50px] absolute -top-1 -right-1">1</p>
+                    </div>
+                    <div class="relative">
+                        <i class="fa-solid fa-bag-shopping text-[25px]"></i>
+                        <p class="flex align-center justify-center text-[13px] w-[20px] h-[20px] text-base-100 bg-[#ED262F] rounded-[50px] absolute -top-1 -right-1">1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-[252px] left-[550px] flex flex-col justify-center items-center">
+                <p class="text-[20px] font-semibold text-base-100">Home <i class="fa-solid fa-chevron-right "></i>  Items</p>
+                <h1 class="text-[50px] text-base-100 font-bold font">All Product</h1>
+            </div>
+            
+        </div>
+        <img src="./img/Layer_1.png" class="w-full absolute bottom-0" alt="">
+    </section>
+
+    <!-- section 2(products) -->
+
+    <section class="px-[100px] mt-[71px]">
+        <div class="flex justify-center items-center">
+            <div class="flex-1"><p class="text-[#797979] text-[20px]">Showing 1–9 of 12 results</p></div>
+            <div class="flex-1 flex justify-end">
+                <div class="flex justify-center items-center text-[#797979] text-[17px]">
+                    <p class="w-[103px]">Sort By</p>
+                    <select class="select select-bordered ">
+                        <option>Default Sorting</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+                <div class=" flex justify-center items-center ml-[30px] text-[#797979] text-[17px]">
+                    <p>Show</p>
+                    <select class="select select-bordered w-[50px] ml-[14px]">
+                        <option>9</option>
+                        <option>7</option>
+                        <option>2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="flex mt-[60px] ">
+            <div class="felx-1">
+                <div class="bg-[#EBF2EB] w-[300px] h-[186px] rounded-xl">
+                    
+                    <div class="flex ">
+                         <div class="w-full px-[20px]  p-6 rounded-lg ">
+        <h2 class="text-lg font-bold">Filter by price</h2>
+        
+        <div class="relative mt-4 slider-container">
+            <!-- Custom Range Inputs -->
+            <input type="range" id="minRange" min="0" max="3000" value="0" >
+            <input type="range" id="maxRange" min="0" max="3000" value="3000" >
+            
+            <!-- Custom Track -->
+            <div class="relative w-full h-2 bg-gray-200 rounded-md">
+                <div id="rangeTrack" class="absolute h-2 bg-[#619461]  rounded-md"></div>
+            </div>
+        </div>
+        
+        <div class="flex justify-between mt-3 text-gray-600">
+            <span>Min Price: $<span id="minValue">0</span></span>
+            <span>Max Price: $<span id="maxValue">3000</span></span>
+        </div>
+                         </div>
+    
+                    </div>
+                </div>
+                <div class="mt-[30px] w-[300px] bg-[#EBF2EB] p-6 rounded-md">
+  <h2 class="text-lg font-semibold text-gray-800 mb-5">
+    Filter by Category
+  </h2>
+
+  <div class="space-y-4">
+
+    <div class="flex items-center justify-between">
+      <label class="flex items-center gap-3 text-gray-700">
+        <input type="checkbox" class="checkbox checkbox-sm" checked />
+        Vegetables
+      </label>
+      <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+        16
+      </span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <label class="flex items-center gap-3 text-gray-700">
+        <input type="checkbox" class="checkbox checkbox-sm" />
+        Fresh fruits
+      </label>
+      <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+        14
+      </span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <label class="flex items-center gap-3 text-gray-700">
+        <input type="checkbox" class="checkbox checkbox-sm" />
+        Spices
+      </label>
+      <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+        18
+      </span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <label class="flex items-center gap-3 text-gray-700">
+        <input type="checkbox" class="checkbox checkbox-sm" />
+        Dry fruits
+      </label>
+      <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+        13
+      </span>
+    </div>
+
+  </div>
+                </div>
+                <div class="mt-[30px] w-[300px] bg-[#EBF2EB] p-6 rounded-md">
+  <h2 class="text-lg font-semibold text-gray-800 mb-5">
+    Filter by Discount
+  </h2>
+
+  <div class="space-y-4">
+
+    <div class="flex items-center justify-between">
+      <label class="flex items-center gap-3 text-gray-700">
+        <input type="checkbox" class="checkbox checkbox-sm" checked />
+       Up to 5%
+      </label>
+      <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+        16
+      </span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <label class="flex items-center gap-3 text-gray-700">
+        <input type="checkbox" class="checkbox checkbox-sm" />
+       05% - 20%
+      </label>
+      <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+        14
+      </span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <label class="flex items-center gap-3 text-gray-700">
+        <input type="checkbox" class="checkbox checkbox-sm" />
+       20% - 30%
+      </label>
+      <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+        18
+      </span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <label class="flex items-center gap-3 text-gray-700">
+        <input type="checkbox" class="checkbox checkbox-sm" />
+       30% - 50%
+      </label>
+      <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+        13
+      </span>
+    </div>
+
+  </div>
+                </div>
+            </div>
+            <div class="cards flex-3 flex-wrap flex  ml-[20px]" id="card">
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+
+    
+    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
+    
+      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
+        50% off
+      </span>
+      
+      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
+      </button>
+     
+      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
+    </div>
+
+   
+    <div class="p-4">
+
+    
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
+          Fresh Fruits
+        </span>
+        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
+      </div>
+
+    
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
+        <span class="text-gray-400 text-sm">|</span>
+        <span class="text-gray-400 text-sm">300 Kcal</span>
+      </div>
+
+    
+      <div class="flex items-center gap-1 mb-3">
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+        <span class="text-gray-500 text-sm ml-1">5.0</span>
+      </div>
+
+      
+      <div class="flex items-baseline gap-2 mb-4">
+        <span class="text-gray-800 font-bold text-xl">$10.85</span>
+        <span class="text-gray-400 text-sm line-through">$14.85</span>
+      </div>
+
+    
+      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
+        Add to cart
+        <i class="fa-solid fa-bag-shopping text-base"></i>
+      </button>
+
+    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="flex items-center justify-center mt-[60px]">
+                <div class="join">
+  <button class="join-item btn bg-[#3A793A] btn-active">1</button>
+  <button class="join-item btn ">2</button>
+  <button class="join-item btn">3</button>
+  <button class="join-item btn">4</button>
+</div>
+        </div>
+    </section>
+
+    <!-- footer -->
+     <footer class="mt-[70px]">
+        <div class="bg-white  py-4 px-6">
+  <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-truck-fast text-red-500 text-3xl"></i>
+      <div>
+        <p class="font-bold text-sm">Fast Delivery</p>
+        <p class="text-gray-400 text-xs">Minimum order $40</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-headset text-green-600 text-3xl"></i>
+      <div>
+        <p class="font-bold text-sm">24/7 Support</p>
+        <p class="text-gray-400 text-xs">Contact us 24 Hours</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-shield-halved text-green-700 text-3xl"></i>
+      <div>
+        <p class="font-bold text-sm">Pay Security</p>
+        <p class="text-gray-400 text-xs">100% Security Payment</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-rotate-left text-orange-400 text-3xl"></i>
+      <div>
+        <p class="font-bold text-sm">Easy Return</p>
+        <p class="text-gray-400 text-xs">Within 30 Days</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Info Bar -->
+<div class="bg-[#eef4ee]  py-4 px-6">
+  <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
+    <div class="flex items-center gap-3">
+      <span class="border-2 border-dashed border-gray-400 rounded-full w-10 h-10 flex items-center justify-center">
+        <i class="fa-solid fa-phone text-gray-500 text-sm"></i>
+      </span>
+      <div>
+        <p class="text-gray-400 text-xs">Call Us 7/24</p>
+        <p class="font-bold text-sm">+880 123 456 789</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="border-2 border-dashed border-gray-400 rounded-full w-10 h-10 flex items-center justify-center">
+        <i class="fa-solid fa-envelope text-gray-500 text-sm"></i>
+      </span>
+      <div>
+        <p class="text-red-500 text-xs font-semibold">Make a Quote</p>
+        <p class="font-bold text-sm">example@gmail.com</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="border-2 border-dashed border-gray-400 rounded-full w-10 h-10 flex items-center justify-center">
+        <i class="fa-regular fa-clock text-gray-500 text-sm"></i>
+      </span>
+      <div>
+        <p class="text-red-500 text-xs font-semibold">Opening Hour</p>
+        <p class="font-bold text-sm">Sunday – Fri: 9 aM – 6 PM</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="border-2 border-dashed border-gray-400 rounded-full w-10 h-10 flex items-center justify-center">
+        <i class="fa-solid fa-location-dot text-gray-500 text-sm"></i>
+      </span>
+      <div>
+        <p class="text-red-500 text-xs font-semibold">Location</p>
+        <p class="font-bold text-sm">House: 25, Road No: 2, Block A,<br/>Mirpur-1, Dhaka 1216</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Footer -->
+<div class="bg-[#eef4ee] px-6 pt-10 pb-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8">
+
+    <!-- Logo & About -->
+    <div class="col-span-2">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center shadow">
+         <img src="./img/logo.png" alt="">
+        </div>
+      </div>
+      <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur. Euismod sagittis ultrices enim eu est elit ut nunc.</p>
+      <div class="flex gap-2">
+        <a href="#" class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:opacity-80">
+          <i class="fa-brands fa-facebook-f text-xs"></i>
+        </a>
+        <a href="#" class="bg-black text-white w-8 h-8 rounded-full flex items-center justify-center hover:opacity-80">
+          <i class="fa-brands fa-x-twitter text-xs"></i>
+        </a>
+        <a href="#" class="bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center hover:opacity-80">
+          <i class="fa-brands fa-pinterest-p text-xs"></i>
+        </a>
+        <a href="#" class="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center hover:opacity-80">
+          <i class="fa-brands fa-instagram text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Shop -->
+    <div>
+      <h3 class="font-extrabold text-sm uppercase tracking-wide mb-4">Shop</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Vegetable</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Fresh Fruits</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Spices</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Dry Fruits</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Beverage</a></li>
+      </ul>
+    </div>
+
+    <!-- Discover -->
+    <div>
+      <h3 class="font-extrabold text-sm uppercase tracking-wide mb-4">Discover</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Upcoming</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Best sellers</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Latest Products</a></li>
+      </ul>
+    </div>
+
+    <!-- Help -->
+    <div>
+      <h3 class="font-extrabold text-sm uppercase tracking-wide mb-4">Help</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Live chat</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Help center</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Order status</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Shopping Guide</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> FAQs</a></li>
+      </ul>
+    </div>
+
+    <!-- Information -->
+    <div>
+      <h3 class="font-extrabold text-sm uppercase tracking-wide mb-4">Information</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> About Us</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> History</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Blog</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Stores</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> Sale</a></li>
+        <li><a href="#" class="flex items-center gap-1 hover:text-green-600"><i class="fa-solid fa-angles-right text-red-400 text-xs"></i> My Account</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Payment Methods -->
+  <div class="max-w-6xl mx-auto mt-8  pt-6">
+    <h3 class="font-extrabold text-sm uppercase tracking-wide mb-4">Payment Methods</h3>
+    <div class="flex flex-wrap gap-2">
+      
+    </div>
+  </div>
+</div>
+
+<!-- Copyright Bar -->
+<div class="bg-[#3a5a40] text-white text-center py-3 text-sm">
+  Copyright© 2025 <span class="text-red-400 font-semibold">Berry & Cherry</span>. All rights reserved.
+</div>
+     </footer>
+  </body>
+  <script src="./js/script.js"></script>
+</html>

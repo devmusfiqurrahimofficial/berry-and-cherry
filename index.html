@@ -73,6 +73,24 @@
             height: 18px; /* Adjust height to fit thumb */
         }
 
+        .sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: #EBF2EB;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.open{
+    right: 0;
+}
+
          
 
     </style>
@@ -149,9 +167,9 @@
                         <i class="fa-regular fa-heart text-[25px]"></i>
                         <p class="flex align-center justify-center text-[13px] w-[20px] h-[20px] text-base-100 bg-[#F0AD4E] rounded-[50px] absolute -top-1 -right-1">1</p>
                     </div>
-                    <div class="relative">
+                    <div class="relative" onclick="toggleSidebar()">
                         <i class="fa-solid fa-bag-shopping text-[25px]"></i>
-                        <p class="flex align-center justify-center text-[13px] w-[20px] h-[20px] text-base-100 bg-[#ED262F] rounded-[50px] absolute -top-1 -right-1">1</p>
+                        <p class="flex align-center justify-center text-[13px] w-[20px] h-[20px] text-base-100 bg-[#ED262F] rounded-[50px] absolute -top-1 -right-1" id="items">0</p>
                     </div>
                 </div>
             </div>
@@ -164,6 +182,39 @@
         <img src="./img/Layer_1.png" class="w-full absolute bottom-0" alt="">
     </section>
 
+    <div class="sidebar" id="sidebar">
+                <div class="p-5 border-b border-[#e0e0e0] flex justify-between items-center">
+                    <h3  class="text-[20px] font-semibold text-black">Shopping Cart</h3>
+                    <button id="remove-cart" onclick="remove()" class="bg-transparent border-none text-[28px] cursor-pointer text-white leading-none">&times;</button>
+                </div>
+                <div  class="flex-1 overflow-y-auto p-5" id="cart-items">
+                    <!-- <div class="flex gap-[15px] py-[15px] border-b border-[#e0e0e0]">
+                        <div class="w-20 h-20 bg-[#f0ebe5] rounded-lg flex items-center justify-center">
+                            <img src="./image/cargo-short.png" alt="">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-medium mb-[5px] text-white">Cargo Short</h3>
+                            <p class="text-sm text-white mb-[10px]">$90</p>
+                            <div class="flex items-center gap-[10px]">
+                                <button class="w-6 h-6 border-none bg-[#f0ebe5] cursor-pointer rounded text-base flex items-center justify-center">-</button>
+                                <div class="text-sm min-w-[20px] text-center text-white">0</div>
+                                <button class="w-6 h-6 border-none bg-[#f0ebe5] cursor-pointer rounded text-base flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+                        <button class="bg-transparent border-none text-red-500 cursor-pointer text-[2rem] p-[5px]">&times;</button>
+                    </div>  -->
+
+
+
+                </div>
+                <div class="p-5 border-t border-[#e0e0e0]">
+                    <div class="flex justify-between text-[18px] font-semibold text-black mb-[15px]">
+                        <span>Total:</span>
+                        <span id="totalprice">$0</span>
+                    </div>
+                    <button class="w-full bg-[#C94D50] text-[#2a2a2a] border-none p-3 rounded-lg cursor-pointer text-sm font-bold tracking-[1px]">Checkout</button>
+                </div>
+            </div> 
     <!-- section 2(products) -->
 
     <section class="px-[100px] mt-[71px]">
@@ -314,8 +365,8 @@
   </div>
                 </div>
             </div>
-            <div class="cards flex-3 flex-wrap flex  ml-[20px]" id="card">
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
+            <div id="cardContainer" class=" flex-3 flex-wrap flex  ml-[20px]" id="card">
+                <!-- <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
 
     
     <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
@@ -372,471 +423,8 @@
       </button>
 
     </div>
-                </div>
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
-
-    
-    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
-    
-      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
-        50% off
-      </span>
-      
-      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
-      </button>
-     
-      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
-    </div>
-
-   
-    <div class="p-4">
-
-    
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
-          Fresh Fruits
-        </span>
-        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
-      </div>
-
-    
-      <div class="flex items-center gap-2 mb-1">
-        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
-        <span class="text-gray-400 text-sm">|</span>
-        <span class="text-gray-400 text-sm">300 Kcal</span>
-      </div>
-
-    
-      <div class="flex items-center gap-1 mb-3">
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <span class="text-gray-500 text-sm ml-1">5.0</span>
-      </div>
-
-      
-      <div class="flex items-baseline gap-2 mb-4">
-        <span class="text-gray-800 font-bold text-xl">$10.85</span>
-        <span class="text-gray-400 text-sm line-through">$14.85</span>
-      </div>
-
-    
-      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
-        Add to cart
-        <i class="fa-solid fa-bag-shopping text-base"></i>
-      </button>
-
-    </div>
-                </div>
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
-
-    
-    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
-    
-      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
-        50% off
-      </span>
-      
-      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
-      </button>
-     
-      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
-    </div>
-
-   
-    <div class="p-4">
-
-    
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
-          Fresh Fruits
-        </span>
-        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
-      </div>
-
-    
-      <div class="flex items-center gap-2 mb-1">
-        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
-        <span class="text-gray-400 text-sm">|</span>
-        <span class="text-gray-400 text-sm">300 Kcal</span>
-      </div>
-
-    
-      <div class="flex items-center gap-1 mb-3">
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <span class="text-gray-500 text-sm ml-1">5.0</span>
-      </div>
-
-      
-      <div class="flex items-baseline gap-2 mb-4">
-        <span class="text-gray-800 font-bold text-xl">$10.85</span>
-        <span class="text-gray-400 text-sm line-through">$14.85</span>
-      </div>
-
-    
-      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
-        Add to cart
-        <i class="fa-solid fa-bag-shopping text-base"></i>
-      </button>
-
-    </div>
-                </div>
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
-
-    
-    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
-    
-      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
-        50% off
-      </span>
-      
-      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
-      </button>
-     
-      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
-    </div>
-
-   
-    <div class="p-4">
-
-    
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
-          Fresh Fruits
-        </span>
-        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
-      </div>
-
-    
-      <div class="flex items-center gap-2 mb-1">
-        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
-        <span class="text-gray-400 text-sm">|</span>
-        <span class="text-gray-400 text-sm">300 Kcal</span>
-      </div>
-
-    
-      <div class="flex items-center gap-1 mb-3">
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <span class="text-gray-500 text-sm ml-1">5.0</span>
-      </div>
-
-      
-      <div class="flex items-baseline gap-2 mb-4">
-        <span class="text-gray-800 font-bold text-xl">$10.85</span>
-        <span class="text-gray-400 text-sm line-through">$14.85</span>
-      </div>
-
-    
-      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
-        Add to cart
-        <i class="fa-solid fa-bag-shopping text-base"></i>
-      </button>
-
-    </div>
-                </div>
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
-
-    
-    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
-    
-      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
-        50% off
-      </span>
-      
-      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
-      </button>
-     
-      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
-    </div>
-
-   
-    <div class="p-4">
-
-    
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
-          Fresh Fruits
-        </span>
-        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
-      </div>
-
-    
-      <div class="flex items-center gap-2 mb-1">
-        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
-        <span class="text-gray-400 text-sm">|</span>
-        <span class="text-gray-400 text-sm">300 Kcal</span>
-      </div>
-
-    
-      <div class="flex items-center gap-1 mb-3">
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <span class="text-gray-500 text-sm ml-1">5.0</span>
-      </div>
-
-      
-      <div class="flex items-baseline gap-2 mb-4">
-        <span class="text-gray-800 font-bold text-xl">$10.85</span>
-        <span class="text-gray-400 text-sm line-through">$14.85</span>
-      </div>
-
-    
-      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
-        Add to cart
-        <i class="fa-solid fa-bag-shopping text-base"></i>
-      </button>
-
-    </div>
-                </div>
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
-
-    
-    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
-    
-      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
-        50% off
-      </span>
-      
-      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
-      </button>
-     
-      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
-    </div>
-
-   
-    <div class="p-4">
-
-    
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
-          Fresh Fruits
-        </span>
-        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
-      </div>
-
-    
-      <div class="flex items-center gap-2 mb-1">
-        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
-        <span class="text-gray-400 text-sm">|</span>
-        <span class="text-gray-400 text-sm">300 Kcal</span>
-      </div>
-
-    
-      <div class="flex items-center gap-1 mb-3">
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <span class="text-gray-500 text-sm ml-1">5.0</span>
-      </div>
-
-      
-      <div class="flex items-baseline gap-2 mb-4">
-        <span class="text-gray-800 font-bold text-xl">$10.85</span>
-        <span class="text-gray-400 text-sm line-through">$14.85</span>
-      </div>
-
-    
-      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
-        Add to cart
-        <i class="fa-solid fa-bag-shopping text-base"></i>
-      </button>
-
-    </div>
-                </div>
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
-
-    
-    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
-    
-      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
-        50% off
-      </span>
-      
-      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
-      </button>
-     
-      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
-    </div>
-
-   
-    <div class="p-4">
-
-    
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
-          Fresh Fruits
-        </span>
-        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
-      </div>
-
-    
-      <div class="flex items-center gap-2 mb-1">
-        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
-        <span class="text-gray-400 text-sm">|</span>
-        <span class="text-gray-400 text-sm">300 Kcal</span>
-      </div>
-
-    
-      <div class="flex items-center gap-1 mb-3">
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <span class="text-gray-500 text-sm ml-1">5.0</span>
-      </div>
-
-      
-      <div class="flex items-baseline gap-2 mb-4">
-        <span class="text-gray-800 font-bold text-xl">$10.85</span>
-        <span class="text-gray-400 text-sm line-through">$14.85</span>
-      </div>
-
-    
-      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
-        Add to cart
-        <i class="fa-solid fa-bag-shopping text-base"></i>
-      </button>
-
-    </div>
-                </div>
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
-
-    
-    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
-    
-      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
-        50% off
-      </span>
-      
-      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
-      </button>
-     
-      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
-    </div>
-
-   
-    <div class="p-4">
-
-    
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
-          Fresh Fruits
-        </span>
-        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
-      </div>
-
-    
-      <div class="flex items-center gap-2 mb-1">
-        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
-        <span class="text-gray-400 text-sm">|</span>
-        <span class="text-gray-400 text-sm">300 Kcal</span>
-      </div>
-
-    
-      <div class="flex items-center gap-1 mb-3">
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <span class="text-gray-500 text-sm ml-1">5.0</span>
-      </div>
-
-      
-      <div class="flex items-baseline gap-2 mb-4">
-        <span class="text-gray-800 font-bold text-xl">$10.85</span>
-        <span class="text-gray-400 text-sm line-through">$14.85</span>
-      </div>
-
-    
-      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
-        Add to cart
-        <i class="fa-solid fa-bag-shopping text-base"></i>
-      </button>
-
-    </div>
-                </div>
-                <div class="cc mt-[20px] mx-[10px] bg-white rounded-3xl w-64 shadow-lg overflow-hidden">
-
-    
-    <div class="relative bg-[#EBF2EB] flex justify-center items-center h-48">
-    
-      <span class="absolute top-3 left-3 bg-[#3a7d44] text-white text-xs font-semibold px-3 py-1 rounded-full">
-        50% off
-      </span>
-      
-      <button class="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-        <i class="fa-regular fa-heart text-gray-400 text-sm"></i>
-      </button>
-     
-      <div class="text-8xl select-none"><img class="w-64 h-48" src="./img/blueberry-powder-blue-wblpb_a57ce3cb-fb67-49ec-b54f-081562ebf530_2000x.jpg" alt=""></div>
-    </div>
-
-   
-    <div class="p-4">
-
-    
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-xs text-[#3a7d44] border border-[#3a7d44] rounded-full px-3 py-0.5 font-medium">
-          Fresh Fruits
-        </span>
-        <i class="fa-solid fa-circle-info text-gray-300 text-base"></i>
-      </div>
-
-    
-      <div class="flex items-center gap-2 mb-1">
-        <h2 class="font-bold text-gray-800 text-lg leading-tight">Blueberry</h2>
-        <span class="text-gray-400 text-sm">|</span>
-        <span class="text-gray-400 text-sm">300 Kcal</span>
-      </div>
-
-    
-      <div class="flex items-center gap-1 mb-3">
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
-        <span class="text-gray-500 text-sm ml-1">5.0</span>
-      </div>
-
-      
-      <div class="flex items-baseline gap-2 mb-4">
-        <span class="text-gray-800 font-bold text-xl">$10.85</span>
-        <span class="text-gray-400 text-sm line-through">$14.85</span>
-      </div>
-
-    
-      <button class="w-full bg-[#EBF2EB] hover:bg-[#c8e6c9] text-[#3a7d44] font-semibold py-2.5 rounded-2xl flex items-center justify-center gap-2 transition-colors duration-200">
-        Add to cart
-        <i class="fa-solid fa-bag-shopping text-base"></i>
-      </button>
-
-    </div>
-                </div>
+                </div> -->
+                
             </div>
             
         </div>

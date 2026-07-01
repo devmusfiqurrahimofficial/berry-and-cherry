@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "price": 2.99,
+    "originalPrice": 3.49,
+    "discount": "14%",
+    "image": "./img/apple.jpg",
+    "category": "Fresh Fruits"
+  },
+  {
+    "id": 2,
+    "name": "Banana",
+    "price": 1.49,
+    "originalPrice": 1.99,
+    "discount": "25%",
+    "image": "./img/banana.jpg",
+    "category": "Fresh Fruits"
+  },
+  {
+    "id": 3,
+    "name": "Orange",
+    "price": 3.29,
+    "originalPrice": 3.99,
+    "discount": "18%",
+    "image": "./img/orange.jpg",
+    "category": "Fresh Fruits"
+  },
+  {
+    "id": 4,
+    "name": "Mango",
+    "price": 4.99,
+    "originalPrice": 5.99,
+    "discount": "17%",
+    "image": "./img/mango.jpg",
+    "category": "Fresh Fruits"
+  },
+  {
+    "id": 5,
+    "name": "Pineapple",
+    "price": 5.49,
+    "originalPrice": 6.49,
+    "discount": "15%",
+    "image": "./img/pineapple.jpg",
+    "category": "Fresh Fruits"
+  },
+  {
+    "id": 6,
+    "name": "Watermelon",
+    "price": 6.99,
+    "originalPrice": 8.49,
+    "discount": "18%",
+    "image": "./img/watermalon.jpg",
+    "category": "Fresh Fruits"
+  },
+  {
+    "id": 7,
+    "name": "Strawberry",
+    "price": 4.49,
+    "originalPrice": 5.49,
+    "discount": "18%",
+    "image": "./img/stawberry.jpg",
+    "category": "Fresh Fruits"
+  },
+  {
+    "id": 8,
+    "name": "Grapes",
+    "price": 3.99,
+    "originalPrice": 4.79,
+    "discount": "17%",
+    "image": "./img/graps.jpg",
+    "category": "Fresh Fruits"
+  },
+  {
+    "id": 9,
+    "name": "Kiwi",
+    "price": 2.79,
+    "originalPrice": 3.49,
+    "discount": "20%",
+    "image": "./img/kiwi.jpg",
+    "category": "Fresh Fruits"
+  }
+]

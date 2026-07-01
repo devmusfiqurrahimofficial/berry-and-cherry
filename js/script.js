@@ -155,13 +155,13 @@ function addtocart(id) {
   
   const totalPrice = document.getElementById("totalprice");
     total += product.price;
-    totalPrice.textContent = total.toFixed(2);
+    totalPrice.textContent ="$"+total.toFixed(2);
    
     plusBtn.addEventListener("click", () => {
         qty++;
         quantity.textContent = qty;
          total += product.price;
-         totalPrice.textContent = total.toFixed(2);
+         totalPrice.textContent = "$"+total.toFixed(2);
     });
 
     minusBtn.addEventListener("click", () => {
@@ -169,7 +169,7 @@ function addtocart(id) {
             qty--;
             quantity.textContent = qty;
               total -= product.price;
-             totalPrice.textContent = total.toFixed(2);
+             totalPrice.textContent = "$"+total.toFixed(2);
         }
     }); 
       removeBtn.addEventListener("click", () => {
@@ -182,7 +182,7 @@ function addtocart(id) {
         count--;
         items.textContent = count;
         total -= qty * product.price;
-        totalPrice.textContent = total.toFixed(2);
+        totalPrice.textContent = "$"+total.toFixed(2);
     });
         }
     });

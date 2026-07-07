@@ -38,6 +38,32 @@
     const cardContainer = document.getElementById("cardContainer");
     let products = []; // Make products global
 
+// Category filter helpers
+const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
+
+function getSelectedCategories() {
+    return Array.from(document.querySelectorAll('.category-checkbox:checked')).map(cb => cb.value);
+}
+
+function filterAndRender() {
+    const min = parseFloat(minRange.value) || 0;
+    const max = parseFloat(maxRange.value) || Infinity;
+    const selected = getSelectedCategories();
+
+    const filtered = products.filter(p => {
+        const priceOk = p.price >= min && p.price <= max;
+        const categoryOk = selected.length === 0 ? true : selected.includes(p.category);
+        return priceOk && categoryOk;
+    });
+
+    renderProducts(filtered);
+}
+
+// Attach listeners to category checkboxes and price ranges
+categoryCheckboxes.forEach(cb => cb.addEventListener('change', filterAndRender));
+minRange.addEventListener('input', filterAndRender);
+maxRange.addEventListener('input', filterAndRender);
+
     async function fetchProducts() {
         try {
             const response = await fetch("./js/products.json");
@@ -45,7 +71,8 @@
                 throw new Error(`HTTP ${response.status}`);
             }
             products = await response.json();
-            renderProducts(products);
+            // initial render with filters applied
+            filterAndRender();
         } catch (error) {
             console.error('Error fetching products:', error);
         }

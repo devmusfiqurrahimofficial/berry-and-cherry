@@ -80,4 +80,250 @@
     "image": "./img/kiwi.jpg",
     "category": "Fresh Fruits"
   }
+  ,
+  {
+    "id": 10,
+    "name": "Tomato",
+    "category": "Vegetable",
+    "price": 1.99,
+    "originalPrice": 2.49,
+    "discount": "20%",
+    "image": "./img/tomato.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Potato",
+    "category": "Vegetable",
+    "price": 1.49,
+    "originalPrice": 1.99,
+    "discount": "25%",
+    "image": "./img/potato.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Carrot",
+    "category": "Vegetable",
+    "price": 2.29,
+    "originalPrice": 2.99,
+    "discount": "23%",
+    "image": "./img/carrot.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Broccoli",
+    "category": "Vegetable",
+    "price": 3.49,
+    "originalPrice": 4.29,
+    "discount": "19%",
+    "image": "./img/broccoli.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Cucumber",
+    "category": "Vegetable",
+    "price": 1.79,
+    "originalPrice": 2.29,
+    "discount": "22%",
+    "image": "./img/cucumber.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Cauliflower",
+    "category": "Vegetable",
+    "price": 2.99,
+    "originalPrice": 3.69,
+    "discount": "19%",
+    "image": "./img/cauliflower.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Eggplant",
+    "category": "Vegetable",
+    "price": 2.49,
+    "originalPrice": 3.19,
+    "discount": "22%",
+    "image": "./img/eggplant.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Spinach",
+    "category": "Vegetable",
+    "price": 1.99,
+    "originalPrice": 2.49,
+    "discount": "20%",
+    "image": "./img/spinach.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Bell Pepper",
+    "category": "Vegetable",
+    "price": 3.29,
+    "originalPrice": 3.99,
+    "discount": "18%",
+    "image": "./img/bell-pepper.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Turmeric Powder",
+    "category": "Spices",
+    "price": 3.99,
+    "originalPrice": 4.99,
+    "discount": "20%",
+    "image": "./img/turmeric-powder.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Red Chili Powder",
+    "category": "Spices",
+    "price": 2.99,
+    "originalPrice": 3.79,
+    "discount": "21%",
+    "image": "./img/red-chili-powder.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Cumin Seeds",
+    "category": "Spices",
+    "price": 4.49,
+    "originalPrice": 5.49,
+    "discount": "18%",
+    "image": "./img/cumin-seeds.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Coriander Powder",
+    "category": "Spices",
+    "price": 3.49,
+    "originalPrice": 4.29,
+    "discount": "19%",
+    "image": "./img/coriander-powder.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Black Pepper",
+    "category": "Spices",
+    "price": 5.99,
+    "originalPrice": 6.99,
+    "discount": "14%",
+    "image": "./img/black-pepper.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Cinnamon Sticks",
+    "category": "Spices",
+    "price": 4.99,
+    "originalPrice": 5.99,
+    "discount": "17%",
+    "image": "./img/cinnamon-sticks.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Cardamom",
+    "category": "Spices",
+    "price": 7.99,
+    "originalPrice": 9.49,
+    "discount": "16%",
+    "image": "./img/cardamom.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Cloves",
+    "category": "Spices",
+    "price": 6.49,
+    "originalPrice": 7.49,
+    "discount": "13%",
+    "image": "./img/cloves.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Garam Masala",
+    "category": "Spices",
+    "price": 4.29,
+    "originalPrice": 5.19,
+    "discount": "17%",
+    "image": "./img/garam-masala.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Almonds",
+    "category": "Dry Fruits",
+    "price": 8.99,
+    "originalPrice": 10.99,
+    "discount": "18%",
+    "image": "./img/almonds.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Cashews",
+    "category": "Dry Fruits",
+    "price": 9.49,
+    "originalPrice": 11.49,
+    "discount": "17%",
+    "image": "./img/cashews.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Walnuts",
+    "category": "Dry Fruits",
+    "price": 10.99,
+    "originalPrice": 12.99,
+    "discount": "15%",
+    "image": "./img/walnuts.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Pistachios",
+    "category": "Dry Fruits",
+    "price": 11.99,
+    "originalPrice": 13.99,
+    "discount": "14%",
+    "image": "./img/pistachios.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Raisins",
+    "category": "Dry Fruits",
+    "price": 4.99,
+    "originalPrice": 5.99,
+    "discount": "17%",
+    "image": "./img/raisins.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Dates",
+    "category": "Dry Fruits",
+    "price": 6.49,
+    "originalPrice": 7.49,
+    "discount": "13%",
+    "image": "./img/dates.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Dried Figs",
+    "category": "Dry Fruits",
+    "price": 7.99,
+    "originalPrice": 9.49,
+    "discount": "16%",
+    "image": "./img/dried-figs.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Apricots",
+    "category": "Dry Fruits",
+    "price": 6.99,
+    "originalPrice": 8.49,
+    "discount": "18%",
+    "image": "./img/apricots.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Mixed Dry Fruits",
+    "category": "Dry Fruits",
+    "price": 12.99,
+    "originalPrice": 14.99,
+    "discount": "13%",
+    "image": "./img/mixed-dry-fruits.jpg"
+  }
+
+
 ]

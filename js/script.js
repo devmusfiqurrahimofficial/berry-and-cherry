@@ -21,8 +21,8 @@
             minValue.innerText = minRange.value;
             maxValue.innerText = maxRange.value;
 
-            let minPercent = (minRange.value / 3000) * 100;
-            let maxPercent = (maxRange.value / 3000) * 100;
+            let minPercent = (minRange.value / 100) * 100;
+            let maxPercent = (maxRange.value / 100) * 100;
             rangeTrack.style.left = minPercent + "%";
             rangeTrack.style.right = 100 - maxPercent + "%";
         }
@@ -36,9 +36,9 @@
 // rest of the code  
 
     const cardContainer = document.getElementById("cardContainer");
-    let products = []; // Make products global
+    let products = [];
 
-// Category filter helpers
+
 const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
 
 function getSelectedCategories() {
